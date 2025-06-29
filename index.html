@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PAPER SCISSORS GAME</title>
+    <style>
+      body{
+        background-color: black;
+        color: aliceblue;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .title{
+        font-size: 30px;
+        font-weight: bold;
+      }
+    .icons{
+      height: 50px;
+      border-radius: 15px;
+    }
+    .move-button{
+      background-color: transparent;
+      border: 3px solid white;
+      width: 120px;
+      height: 120px;
+      border-radius: 60px;
+      margin: 10px;
+      cursor: pointer;
+      
+    }
+    .result{
+      font-size:  25px;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+    .reset-button{
+      width: 100px;
+      padding: 10px;
+      border-radius:10px;
+      cursor: pointer;
+    }
+
+    </style>
+  </head>
+  <body>
+    <p class="title">Rock paper Scissors game</p>
+    <button class="move-button" onclick="
+    playGame('rock');
+    "><img class="icons" src="https://images.rawpixel.com/image_png_social_square/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTEyL2pvYjk1OS1lbGVtZW50LWItMDEzNi1wXzEucG5n.png" alt="rock-img"></button>
+
+    <button class="move-button" onclick="
+    playGame('paper');
+    "><img class="icons" src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTEyL2pvYjk1OS1lbGVtZW50LWItMDE0Mi1wXzEucG5n.png" alt="paper-img"></button>
+
+    <button class="move-button" onclick="
+    playGame('scissor');
+    "><img class="icons" src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTEyL2pvYjk1OS1lbGVtZW50LWItMDEzOC1wXzEucG5n.png" alt="scissor-img"></button>
+<p class="js-result result"></p>
+<p class="js-moves">
+</p>
+<p class="js-Score"></p>
+
+    <button onclick="
+    score.wins=0;
+    score.loss=0;
+    score.ties=0;
+    updatescore()" class="reset-button">Reset</button>
+  <script>
+    const score={
+      wins : 0,
+      loss : 0,
+      ties : 0
+    };
+
+    // document.querySelector('.js-Score')
+    // .innerHTML=`wins :${score.wins} losses ${score.loss} ties ${score.ties}`
+    updatescore()// writenn avobe code is same as writeen in function
+
+
+    function playGame(playerMove){
+      const computerMove=pickComputerMove();
+     console.log(computerMove);
+     let result='';
+     
+     if(playerMove==='scissor'){
+      if(computerMove==='rock'){
+      result='you lose';
+     } else if(computerMove==='paper'){
+      result='you win';
+     } else if(computerMove==='scissor'){
+      result='Tie';
+     }
+     }
+
+     else if(playerMove==='paper'){
+      if(computerMove==='rock'){
+      result='you win';
+     } else if(computerMove==='paper'){
+      result='Tie';
+     } else if(computerMove==='scissor'){
+      result='you lose';
+     }
+     }
+
+     else{
+      if(computerMove==='rock'){
+      result='Tie';
+     } else if(computerMove==='paper'){
+      result='you lose';
+     } else if(computerMove==='scissor'){
+      result='you win';
+     }
+     }
+     
+     if(result==='you win'){
+      score.wins+=1;
+     }
+     else if(result==='you lose'){
+      score.loss +=1;
+     }
+     else if(result==='Tie'){
+      score.ties+=1;
+     }
+
+    //   document.querySelector('.js-Score')
+    // .innerHTML=`wins :${score.wins} losses ${score.loss} ties ${score.ties}`
+
+     updatescore()// we are using function for reuse the code
+    document.querySelector('.js-result').innerHTML=result;
+    
+    document.querySelector('.js-moves').innerHTML=`you picked ${playerMove} ,computer picked ${computerMove}`
+    /* alert(` you picked ${playerMove} ,computer picked ${computerMove}. ${result} 
+wins :${score.wins} losses ${score.loss} ties ${score.ties}`);*/
+
+    }
+    function result(){
+      document.querySelector('.js-result')
+      .innerHTML=result;
+    }
+    
+    function updatescore(){
+       document.querySelector('.js-Score')
+    .innerHTML=`wins :${score.wins} losses ${score.loss} ties ${score.ties}`
+
+    }
+
+    function pickComputerMove(){
+      const randomNumber=Math.random();
+      let computerMove='';
+    if(randomNumber>=0 && randomNumber<1/3){// logical operator has lower proitiy than mathematical operator
+       computerMove='rock';
+    } else  if(randomNumber>=1/3 && randomNumber<2/3){
+       computerMove='paper';
+     } else  if(randomNumber>=2/3 && randomNumber<1){
+       computerMove='scissor';
+     }
+     return computerMove;
+    }
+  </script>
+  </body>
+</html>
