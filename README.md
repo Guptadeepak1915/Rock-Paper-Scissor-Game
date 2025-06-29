@@ -39,6 +39,7 @@ This project is great for:
 1. Clone the repo
 
    ```
+   https://github.com/Guptadeepak1915/Rock-Paper-Scissor-Game.git
   https://github.com/Guptadeepak1915/Rock-Paper-Scissor-Game/tree/main
    ```
 2. Open `index.html` in your browser
