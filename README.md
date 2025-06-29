@@ -39,15 +39,9 @@ This project is great for:
 1. Clone the repo
 
    ```
-   git clone https://github.com/Guptadeepak1915/Rock-Paper-Scissor-Game.git
+  https://github.com/Guptadeepak1915/Rock-Paper-Scissor-Game/tree/main
    ```
 2. Open `index.html` in your browser
 3. Play and enjoy!
 
----
-
-> 💬 *Feel free to fork, star ⭐ the repo, and suggest improvements!*
-
----
-
-Agar tum chaho to main tumhara project dekh kar uske hisaab se README ko aur customize bhi kar sakta hoon. Bhejo agar zip ya link ho to.
+--
