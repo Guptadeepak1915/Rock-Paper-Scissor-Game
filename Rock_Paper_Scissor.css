@@ -23,7 +23,7 @@
       font-size: 30px;
       font-weight: bold;
       background: linear-gradient(45deg,#EEAECA,#FC466B);
-      -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       border-radius: 10px;
     }
