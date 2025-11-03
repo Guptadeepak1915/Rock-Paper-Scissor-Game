@@ -40,7 +40,6 @@ This project is great for:
 
    ```
    https://github.com/Guptadeepak1915/Rock-Paper-Scissor-Game.git
-  https://github.com/Guptadeepak1915/Rock-Paper-Scissor-Game/tree/main
    ```
 2. Open `index.html` in your browser
 3. Play and enjoy!
